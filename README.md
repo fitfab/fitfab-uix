@@ -23,8 +23,6 @@ And type checking is enabled when building with the following command.
 "build": "tsc --noemit && vite build",
 ```
 
-```bash
-git remote add origin git@github.com:fitfab/fitfab-uix.git
-git branch -M main
-git push -u origin main
-```
+## Storybook with Vitejs
+
+[Storybook for vite](https://storybook.js.org/blog/storybook-for-vite/)
