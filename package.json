@@ -16,6 +16,7 @@
   "files": [
     "dist"
   ],
+  "types": "./dist/index.d.ts",
   "main": "./dist/fitfab-uix.umd.js",
   "module": "./dist/fitfab-uix.es.js",
   "exports": {
