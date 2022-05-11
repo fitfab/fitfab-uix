@@ -29,8 +29,8 @@
     "build": "tsc --noemit && vite build",
     "postbuild": "tsc --emitDeclarationOnly",
     "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "sb": "start-storybook -p 6006",
+    "build:sb": "build-storybook"
   },
   "dependencies": {
     "react": "^18.0.0",
