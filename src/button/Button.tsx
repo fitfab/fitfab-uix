@@ -1,8 +1,11 @@
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * It indicates if the button is primary or not.
+   */
   primary?: boolean;
 }
-export const Button = ({ children, primary, ...props }: ButtonProps) => {
+export const Button = ({ children, primary = true, ...props }: ButtonProps) => {
   const variant = primary
     ? "bg-black hover:bg-neutral-800"
     : "bg-slate-400 hover:bg-slate-600";

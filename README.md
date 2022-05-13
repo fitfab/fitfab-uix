@@ -1,6 +1,6 @@
 # fitfab-uix
 
-`fitfab user interface experience` is a collection of React components and utilities for building user interfaces using web api technologies. (and of course, Reactjs.)
+`fitfab user interface experience` is a collection of `React` components and utilities for building webpages relying on modern web apis.
 
 This project uses the following technologies:
 
