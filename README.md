@@ -9,7 +9,7 @@ This project uses the following technologies:
 - [typescript](https://www.typescriptlang.org/)
 - [tailwindcss](https://tailwindcss.com/)
 
-## Vitejs
+## Create project with Vitejs
 
 I started with the following CMD:
 
@@ -21,7 +21,7 @@ Follow these steps from the [Vite library mode documentation](https://vitejs.dev
 
 ## TypeScript
 
-I am using TypeScript to generate the types of the components and utilities with the command below.
+Use TypeScript to generate the types of the components and utilities with the command below.
 
 ```json
 // Command to generate the types within the package.json file
@@ -35,10 +35,58 @@ And type checking is enabled when building with the following command.
 "build": "tsc --noemit && vite build",
 ```
 
-## Storybook with Vitejs
+## Install Storybook with Vitejs builder
 
-I install storybook with the command below at the foot of the project.
+Install storybook with the command below at the foot of the project.
 
 `npx sb init --builder @storybook/builder-vite`
 
 Reference: [Storybook for vite](https://storybook.js.org/blog/storybook-for-vite/)
+
+## Install Tailwindcss
+
+```bash
+yarn add -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+```
+
+The command above will generate the `tailwindcss.config.js` file. Update the `tailwind.config.js` content to point to the `src` directory se below.
+
+```js
+module.exports = {
+  // ...points to the src directory
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+Then create a `postcss.config.js` file with the following content.
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+Create a `styles` folder with a `main.css` file in it.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Point Storybook to the new Tailwindcss styles
+
+Update the `.storybook/preview.js` file to consume the stylesheet by importing it.
+
+```js
+import "../src/styles/main.css";
+export const parameters = { //... rest of the code
+```
