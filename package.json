@@ -3,7 +3,7 @@
   "description": "fitfab user interface experience is a collection of React components and utilities for building user interfaces using web api technologies.",
   "homepage": "https://github.com/fitfab/fitfab-uix#readme",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "reactjs",
     "vitejs",
