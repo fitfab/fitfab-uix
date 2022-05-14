@@ -26,11 +26,10 @@
     }
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc --noemit && vite build",
     "postbuild": "tsc --emitDeclarationOnly",
     "preview": "vite preview",
-    "sb": "start-storybook -p 6006",
+    "dev": "start-storybook -p 6006",
     "build:sb": "build-storybook"
   },
   "devDependencies": {
