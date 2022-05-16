@@ -118,6 +118,7 @@ References:
 [VSCode workspace documentation](https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings)
 
 [ts-standard options](https://github.com/standard/vscode-standard#extension-options)
+
 ```json
 // workspace settings
 {
