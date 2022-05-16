@@ -13,7 +13,7 @@ This project uses the following technologies:
 
 I started with the following CMD:
 
-`yarn create vite fitfab-uix --template preact-ts`
+`yarn create vite fitfab-uix --template react-ts`
 
 ### Vite Library Mode
 
@@ -89,4 +89,65 @@ Update the `.storybook/preview.js` file to consume the stylesheet by importing i
 ```js
 import "../src/styles/main.css";
 export const parameters = { //... rest of the code
+```
+
+## Standardjs setup
+
+Refer to the official [supported variant for TypeScript `ts-standard`](https://standardjs.com/index.html#typescript) for more information.
+
+```bash
+# Install the official supported variant for TypeScript
+yarn add -D ts-standard
+```
+
+```json
+// update the package.json file to tell ts-standard to use the tsconfig.json file
+{
+  "ts-standard": {
+    "project": "./tsconfig.json"
+  }
+}
+```
+
+### VScode Worksapace setup with `ts-standard`
+
+Workspace settings are specific to a project and can be shared across developers on a project. Workspace settings override user setting
+
+References:
+
+[VSCode workspace documentation](https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings)
+
+[ts-standard options](https://github.com/standard/vscode-standard#extension-options)
+
+```json
+// workspace settings
+{
+  "editor.defaultFormatter": "standard.vscode-standard",
+  "editor.formatOnSave": true,
+  "[typescriptreact, typescript]": {
+    "editor.defaultFormatter": "standard.vscode-standard",
+    "editor.formatOnSave": true
+  },
+  "standard.run": "onSave",
+  "standard.enable": true,
+  "standard.engine": "ts-standard",
+  "standard.usePackageJson": true,
+  "standard.autoFixOnSave": true
+}
+```
+
+#### Caveat after setting ts-standard
+
+I have to ignore linting for `vite.config.ts` because it throws the error below.
+
+```bash
+vite.config.ts:0:0: Parsing error: "parserOptions.project" has been set for @typescript-eslint/parser.
+The file does not match your project config: vite.config.ts.
+The file must be included in at least one of the projects provided. ()
+```
+
+also, I have to ignore linting for `vite-env.d.ts` because it throws the error below.
+
+```bash
+Do not use a triple slash reference for vite/client, use `import` style instead. (@typescript-eslint/triple-slash-reference)
 ```
