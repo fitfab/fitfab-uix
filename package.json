@@ -3,12 +3,14 @@
   "description": "fitfab user interface experience is a collection of React components and utilities for building user interfaces using web api technologies.",
   "homepage": "https://github.com/fitfab/fitfab-uix#readme",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
-    "reactjs",
     "vitejs",
+    "reactjs",
+    "typescript",
+    "ts-standard",
     "tailwindcss",
-    "typescript"
+    "storybook"
   ],
   "author": "Miguel Julio <mjulio.developer@gmail.com> (http://fitfab.com)",
   "license": "MIT",
