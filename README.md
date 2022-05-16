@@ -90,3 +90,48 @@ Update the `.storybook/preview.js` file to consume the stylesheet by importing i
 import "../src/styles/main.css";
 export const parameters = { //... rest of the code
 ```
+
+## Standardjs setup
+
+Refer to the official [supported variant for TypeScript `ts-standard`](https://standardjs.com/index.html#typescript) for more information.
+
+```bash
+# Install the official supported variant for TypeScript
+yarn add -D ts-standard
+```
+
+```json
+// update the package.json file to tell ts-standard to use the tsconfig.json file
+{
+  "ts-standard": {
+    "project": "./tsconfig.json"
+  }
+}
+```
+
+### VScode Worksapace setup with `ts-standard`
+
+Workspace settings are specific to a project and can be shared across developers on a project. Workspace settings override user setting
+
+References:
+
+[VSCode workspace documentation](https://code.visualstudio.com/docs/getstarted/settings#_workspace-settings)
+
+[ts-standard options](https://github.com/standard/vscode-standard#extension-options)
+```json
+// workspace settings
+{
+  "editor.defaultFormatter": "standard.vscode-standard",
+  "editor.formatOnSave": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "standard.vscode-standard",
+    "editor.formatOnSave": true
+  },
+  "standard.run": "onSave",
+  "standard.enable": true,
+  "standard.engine": "ts-standard",
+  "standard.usePackageJson": true,
+  "standard.autoFixOnSave": true
+}
+
+```
