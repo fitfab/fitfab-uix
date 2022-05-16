@@ -26,7 +26,7 @@
     }
   },
   "scripts": {
-    "build": "tsc --noemit && vite build",
+    "build": "yarn lint && tsc --noemit && vite build",
     "postbuild": "tsc --emitDeclarationOnly",
     "preview": "vite preview",
     "dev": "start-storybook -p 6006",
@@ -60,5 +60,8 @@
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "ts-standard": {
+    "project": "./tsconfig.json"
   }
 }

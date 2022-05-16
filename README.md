@@ -13,7 +13,7 @@ This project uses the following technologies:
 
 I started with the following CMD:
 
-`yarn create vite fitfab-uix --template preact-ts`
+`yarn create vite fitfab-uix --template react-ts`
 
 ### Vite Library Mode
 
@@ -124,7 +124,7 @@ References:
 {
   "editor.defaultFormatter": "standard.vscode-standard",
   "editor.formatOnSave": true,
-  "[typescriptreact]": {
+  "[typescriptreact, typescript]": {
     "editor.defaultFormatter": "standard.vscode-standard",
     "editor.formatOnSave": true
   },
@@ -134,5 +134,20 @@ References:
   "standard.usePackageJson": true,
   "standard.autoFixOnSave": true
 }
+```
 
+#### Caveat after setting ts-standard
+
+I have to ignore linting for `vite.config.ts` because it throws the error below.
+
+```bash
+vite.config.ts:0:0: Parsing error: "parserOptions.project" has been set for @typescript-eslint/parser.
+The file does not match your project config: vite.config.ts.
+The file must be included in at least one of the projects provided. ()
+```
+
+also, I have to ignore linting for `vite-env.d.ts` because it throws the error below.
+
+```bash
+Do not use a triple slash reference for vite/client, use `import` style instead. (@typescript-eslint/triple-slash-reference)
 ```

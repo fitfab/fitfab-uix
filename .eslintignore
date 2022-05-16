@@ -1,0 +1,9 @@
+# vite.config.ts:0:0: Parsing error: "parserOptions.project" has been set for @typescript-eslint/parser.
+# The file does not match your project config: vite.config.ts.
+# The file must be included in at least one of the projects provided. ()
+
+vite.config.ts
+
+# Do not use a triple slash reference for vite/client, use `import` style instead.
+# (@typescript-eslint/triple-slash-reference)
+vite-env.d.ts
