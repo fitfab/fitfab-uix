@@ -149,5 +149,67 @@ The file must be included in at least one of the projects provided. ()
 also, I have to ignore linting for `vite-env.d.ts` because it throws the error below.
 
 ```bash
-Do not use a triple slash reference for vite/client, use `import` style instead. (@typescript-eslint/triple-slash-reference)
+Do not use a triple slash reference for vite/client, use `import` style instead.
+(@typescript-eslint/triple-slash-reference)
 ```
+
+## Commilint setup
+
+Reference: [Commilint local setup guide](https://commitlint.js.org/#/./guides-local-setup?id=guides-local-setup)
+
+  ```bash
+  # 1. Install the npm package
+  yarn add -D @commitlint/{cli,config-conventional}
+
+  # 2. Create a commilint.config.js file and 
+  # configure commitlint to use conventional config
+echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+  ```
+
+### Install Husky
+
+Reference: [A handy git hook helper.](https://typicode.github.io/husky/#/?id=manual)
+  
+  ```bash
+  # 1. Install the npm package
+  yarn add -D husky
+
+  # 2. Enable git hooks
+  npx husky install
+
+  # 3. To automatically have Git hooks enabled after install, edit package.json
+  npm set-script prepare "husky install"
+
+  # 4. The command above will add this to the package.json file:
+  {
+    "scripts": {
+      "prepare": "husky install"
+    }
+  }
+
+  # 5. Add 1st hook with the Command below
+  cat <<EEE > .husky/commit-msg
+  #!/bin/sh
+  . "\$(dirname "\$0")/_/husky.sh"
+
+  npx --no -- commitlint --edit "\${1}"
+  EEE
+
+  # 6. Add 2nd hook with the husky Command below
+  npx husky add .husky/pre-commit "npx lint-staged"
+  ```
+
+### lint-staged setup
+  
+  ```bash
+  # 1. Install the npm package
+  yarn add -D lint-staged
+
+  # 2. Add the following to the package.json file
+    "lint-staged": {
+      "*.{js,ts,tsx}": [
+        "yarn lint"
+      ]
+    }
+  ```
+  
