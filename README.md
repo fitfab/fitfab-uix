@@ -195,4 +195,18 @@ Reference: [A handy git hook helper.](https://typicode.github.io/husky/#/?id=man
   npx --no -- commitlint --edit "\${1}"
   EEE
   ```
+
+  ### lint-staged setup
+
+  ```bash
+  # 1. Install the npm package
+  yarn add -D lint-staged
+
+  # 2. Add the following to the package.json file
+    "lint-staged": {
+      "*.{js,ts,tsx}": [
+        "yarn lint"
+      ]
+    }
+  ```
   

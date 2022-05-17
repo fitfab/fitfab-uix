@@ -55,6 +55,7 @@
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
     "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
     "postcss": "^8.4.13",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
@@ -69,5 +70,10 @@
   },
   "ts-standard": {
     "project": "./tsconfig.json"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "yarn lint"
+    ]
   }
 }
