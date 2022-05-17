@@ -220,4 +220,8 @@ Reference: [A handy git hook helper.](https://typicode.github.io/husky/#/?id=man
       ]
     }
   ```
+
+  ## Release-please setup
+
+  Reference: [Release-please github action setup documentation](https://github.com/google-github-actions/release-please-action)
   
