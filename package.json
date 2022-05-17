@@ -28,13 +28,14 @@
     }
   },
   "scripts": {
+    "dev": "start-storybook -p 6006",
     "build": "yarn lint && tsc --noemit && vite build",
     "postbuild": "tsc --emitDeclarationOnly",
-    "preview": "vite preview",
-    "dev": "start-storybook -p 6006",
     "build:sb": "build-storybook",
+    "preview": "vite preview",
     "lint": "ts-standard --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "TODO: Unit test && exit 1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",

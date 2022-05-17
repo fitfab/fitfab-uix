@@ -194,10 +194,13 @@ Reference: [A handy git hook helper.](https://typicode.github.io/husky/#/?id=man
 
   npx --no -- commitlint --edit "\${1}"
   EEE
+
+  # 6. Add 2nd hook with the husky Command below
+  npx husky add .husky/pre-commit "npx lint-staged"
   ```
 
-  ### lint-staged setup
-
+### lint-staged setup
+  
   ```bash
   # 1. Install the npm package
   yarn add -D lint-staged
