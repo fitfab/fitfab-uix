@@ -9,6 +9,14 @@ This project uses the following technologies:
 - [typescript](https://www.typescriptlang.org/)
 - [tailwindcss](https://tailwindcss.com/)
 
+TODO:
+
+[] add unit test
+
+[] add storybook accessibility plugin
+
+[] add light-house or web-vitals
+
 ## Create project with Vitejs
 
 I started with the following CMD:
