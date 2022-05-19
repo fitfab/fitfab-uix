@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    /**
+    * These styles may need to removed -- they are here for testing purposes
+    */
+    .carousel-content {
+        display: flex;
+        height: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+
+    .carousel-content > * {
+        scroll-snap-align: start;
+        display: block;
+        flex: none;
+    }
+}

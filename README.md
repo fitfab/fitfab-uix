@@ -49,7 +49,17 @@ Install storybook with the command below at the foot of the project.
 
 `npx sb init --builder @storybook/builder-vite`
 
+Enable Vite code spliting by adding the following configuration to the `.storybook/main.js` file. Read more about [Storybook Performance: Vite vs Webpack](https://storybook.js.org/blog/storybook-performance-from-webpack-to-vite/).
+
+```js
+  features: {
+    storyStoreV7: true,
+  },
+```
+
 Reference: [Storybook for vite](https://storybook.js.org/blog/storybook-for-vite/)
+
+
 
 ## Install Tailwindcss
 

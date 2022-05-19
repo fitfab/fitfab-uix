@@ -7,6 +7,9 @@ module.exports = {
     "@storybook/addon-a11y",
   ],
   framework: "@storybook/react",
+  features: {
+    storyStoreV7: true,
+  },
   core: {
     builder: "@storybook/builder-vite",
   },
