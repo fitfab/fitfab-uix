@@ -4,30 +4,30 @@ import { CarouselViewport, Steering, Button } from './partials'
 export interface CarouselProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * The children to be rendered inside the carousel.
-   * This is an array of elements.
+   * This is an array of React.ReactNode or html elements.
    **/
   children: React.ReactNode
 
   /**
-   * The widht of the carousel default to 100%
+   * The width of the carousel default to `100%`
    */
-  width?: string
+  width: string
   /**
-    * The height of the carousel default to 320px
+    * The height of the carousel default to `320px`
     */
-  height?: string
+  height: string
 
   /**
-    * gap -- the space between each slides and
+    * The space between(aka gutter or gap) each slides and
     * it should be in any we unit (px, %, em, rem, ...)
-    * default to 16px
+    * default to `24px`
     */
-  gap?: string
+  gap: string
 }
 
 export const Carousel = ({
   children,
-  width = '960px',
+  width = '100%',
   height = '320px',
   gap = '24px',
   ...rest
@@ -92,8 +92,8 @@ export const Carousel = ({
   }
 
   return (
-    <CarouselViewport width={width} height={height} gap={gap} {...rest}>
-      <div ref={carouselViewRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory h-full w-fit children:flex-none children:snap-start children:mr-6 last:children:mr-0'>{children}</div>
+    <CarouselViewport width={width} height={height} gap={gap} {...rest} tabIndex={0}>
+      <div style={{ gap }} ref={carouselViewRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory h-full w-fit children:flex-none children:snap-start'>{children}</div>
       <Steering>
         <Button
           onClick={shift}
