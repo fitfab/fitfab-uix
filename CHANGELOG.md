@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://github.com/fitfab/fitfab-uix/compare/v1.0.0...v1.0.1) (2022-05-20)
+
+
+### Bug Fixes
+
+* address gap prop properly and also update storybook ([1af0979](https://github.com/fitfab/fitfab-uix/commit/1af09796f72502c7e8053ecacae2e3884028a804))
+
 ## 1.0.0 (2022-05-17)
 
 
