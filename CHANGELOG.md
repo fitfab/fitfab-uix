@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/fitfab/fitfab-uix/compare/v1.0.1...v1.1.0) (2022-05-20)
+
+
+### Features
+
+* release new carousel ([9ca4ec9](https://github.com/fitfab/fitfab-uix/commit/9ca4ec96b77e07ab057e94e7171beb5437445d4f))
+
 ### [1.0.1](https://github.com/fitfab/fitfab-uix/compare/v1.0.0...v1.0.1) (2022-05-20)
 
 
