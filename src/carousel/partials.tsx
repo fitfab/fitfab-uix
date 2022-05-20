@@ -7,7 +7,7 @@ export const CarouselViewport = ({ width, height, gap, ...rest }: CarouselProps)
     height: `calc(${height} + '48px')`
   }
   return (
-    <div style={dynamicStyles} className={`relative mx-[auto] pb-12`} {...rest} /> // eslint-disable-line
+    <div style={dynamicStyles} className={`relative mx-[auto]`} {...rest} /> // eslint-disable-line
   )
 }
 
