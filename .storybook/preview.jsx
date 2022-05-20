@@ -1,3 +1,4 @@
+import React from 'react';
 import "../src/styles/main.css";
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -8,3 +9,14 @@ export const parameters = {
     },
   },
 };
+
+const styles = { margin: '.5rem auto' }
+
+
+export const decorators = [
+  (Story) => (
+      <div style={styles}>
+          <Story />
+      </div>
+  ),
+]

@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+import { Carousel } from "./Carousel";
+import {data} from "../../mockdata/slides";
+
+<Meta title="Carousel" component={Carousel} />
+
+# Carousel
+
+This component relies on modern web apis and therefore works only in modern browsers. And these are: 
+
+- IntersectionObserver(JS)
+- scrollBy(JS)
+- Scroll Snap(CSS)
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      children: data,
+      width: '960px'
+    }}
+  >
+    {(args) => <Carousel {...args}>{args.children.map((slide, index) => <div key={index} data-slide={index}><img src={slide.src}  width={slide.width} /></div>)}</Carousel>}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
