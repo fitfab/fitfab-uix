@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://github.com/fitfab/fitfab-uix/compare/v1.1.1...v1.1.2) (2022-05-20)
+
+
+### Bug Fixes
+
+* height for the carousel is fixed ([316d8c0](https://github.com/fitfab/fitfab-uix/commit/316d8c0bdead9b3fe0849da00853aff3b092dbdc))
+
 ### [1.1.1](https://github.com/fitfab/fitfab-uix/compare/v1.1.0...v1.1.1) (2022-05-20)
 
 
