@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://github.com/fitfab/fitfab-uix/compare/v1.1.0...v1.1.1) (2022-05-20)
+
+
+### Bug Fixes
+
+* add a yarn ci CMD to the script to fix github action workflow ([99c6db6](https://github.com/fitfab/fitfab-uix/commit/99c6db62daf12be192df73b1740b36fd94014e61))
+
 ## [1.1.0](https://github.com/fitfab/fitfab-uix/compare/v1.0.1...v1.1.0) (2022-05-20)
 
 
