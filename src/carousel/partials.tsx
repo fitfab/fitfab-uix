@@ -2,9 +2,10 @@ import React from 'react'
 import { CarouselProps } from './Carousel'
 
 export const CarouselViewport = ({ width, height, gap, ...rest }: CarouselProps): React.ReactElement => {
+  const navigationHeight = '48px'
   const dynamicStyles = {
     width,
-    height: `calc(${height} + '48px')`
+    height: `calc(${height} + ${navigationHeight})`
   }
   return (
     <div style={dynamicStyles} className={`relative mx-[auto]`} {...rest} /> // eslint-disable-line
