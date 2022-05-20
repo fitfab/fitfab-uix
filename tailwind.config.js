@@ -8,7 +8,6 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     plugin(function ({ addVariant }) {
       addVariant('children', '& > *')
-      addVariant('last-children', '& > *:last-child')
     })
   ]
 }

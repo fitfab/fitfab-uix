@@ -10,12 +10,12 @@ export const parameters = {
   },
 };
 
-const styles = { padding: '2rem', margin: '1rem auto', width: '80%', background: '#eee' }
+const styles = { margin: '.5rem auto' }
 
 
 export const decorators = [
   (Story) => (
-      <div style={{}}>
+      <div style={styles}>
           <Story />
       </div>
   ),

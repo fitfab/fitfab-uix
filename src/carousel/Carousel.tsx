@@ -43,7 +43,7 @@ export const Carousel = ({
   function initiliaze (): void {
     const options = {
       root: carouselViewRef.current,
-      threshold: 0.5
+      threshold: 0.9
     }
     init.current = true
     console.log(carouselViewRef.current)
@@ -101,7 +101,7 @@ export const Carousel = ({
 
   return (
     <CarouselViewport width={width} height={height} gap={gap} {...rest}>
-      <div ref={carouselViewRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory h-full w-fit children:flex-none children:snap-start children:mr-6 last-children:mr-0'>{children}</div>
+      <div ref={carouselViewRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory h-full w-fit children:flex-none children:snap-start children:mr-6 last:children:mr-0'>{children}</div>
       <Steering>
         <Button
           onClick={shift}
