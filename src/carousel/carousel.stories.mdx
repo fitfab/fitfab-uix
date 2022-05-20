@@ -18,7 +18,7 @@ This component relies on modern web apis and therefore works only in modern brow
     name="Default"
     args={{
       children: data,
-      width: '780px'
+      width: '960px'
     }}
   >
     {(args) => <Carousel {...args}>{args.children.map((slide, index) => <div key={index} data-slide={index}><img src={slide.src}  width={slide.width} /></div>)}</Carousel>}

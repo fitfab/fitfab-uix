@@ -46,8 +46,7 @@ export const Carousel = ({
       threshold: 0.9
     }
     init.current = true
-    console.log(carouselViewRef.current)
-    scrollAmount.current = carouselViewRef.current!.clientWidth! * 0.8 // eslint-disable-line
+    scrollAmount.current = carouselViewRef.current!.clientWidth * 0.8 // eslint-disable-line
 
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -80,13 +79,6 @@ export const Carousel = ({
       behavior: 'smooth',
       left: position.x
     })
-
-    console.log(observer.current)
-
-    return () => {
-      console.log('unmount')
-      // observer.current!.disconnect();
-    }
   }, [position])
 
   const shift = (e: React.MouseEvent<HTMLElement>): void => {

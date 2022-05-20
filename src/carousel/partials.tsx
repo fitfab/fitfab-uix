@@ -2,9 +2,12 @@ import React from 'react'
 import { CarouselProps } from './Carousel'
 
 export const CarouselViewport = ({ width, height, gap, ...rest }: CarouselProps): React.ReactElement => {
-  const w = `w-[${width}]` // eslint-disable-line
+  const dynamicStyles = {
+    width,
+    height
+  }
   return (
-    <div className={`relative  w-[100%] mx-[auto]`} {...rest} /> // eslint-disable-line
+    <div style={dynamicStyles} className={`relative mx-[auto] overflow-hidden pb-12`} {...rest} /> // eslint-disable-line
   )
 }
 

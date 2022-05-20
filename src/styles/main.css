@@ -1,35 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-    /**
-    * These styles may need to removed -- they are here for testing purposes
-    */
-    .viewport {
-        width: 90%;
-        height: 320px;
-        margin: auto;
-        position: relative;
-        transition: all 0.5s ease;
-    }
-    .carousel-content {
-        display: flex;
-        height: 100%;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-    }
-
-    .carousel-content > * {
-        display: block;
-        flex: none;
-        scroll-snap-align: start;
-        margin-right: 1rem;
-    }
-
-    .carousel-content > *:last-child {
-        margin-right: 0;
-    }  
-}
