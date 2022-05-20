@@ -98,11 +98,10 @@ export const Carousel = ({
             : scrollAmount.current
     })
   }
-  console.log('render')
 
   return (
     <CarouselViewport width={width} height={height} gap={gap} {...rest}>
-      <div ref={carouselViewRef} className='flex gap-6 overflow-scroll scroll-smooth snap-mandatory  h-full children:flex-none children:snap-start w-fit'>{children}</div>
+      <div ref={carouselViewRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory h-full w-fit children:flex-none children:snap-start children:mr-6 last-children:mr-0'>{children}</div>
       <Steering>
         <Button
           onClick={shift}
