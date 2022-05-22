@@ -46,7 +46,7 @@ export const Carousel = ({
       threshold: 0.9
     }
     observer.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
           entry.target.getAttribute('data-slide') === '0'
             ? setIsFirstItem(true)
@@ -71,6 +71,10 @@ export const Carousel = ({
     if (!init.current) {
       init.current = true
       scrollAmount.current = carouselContentRef.current!.clientWidth * 0.8 // eslint-disable-line
+      const items = [...carouselContentRef.current!.children] // eslint-disable-line
+      items.forEach((item, index) => {
+        item.setAttribute('data-slide', index.toString())
+      })
       observeFirstAndLastSlide()
       return
     }

@@ -21,6 +21,6 @@ export const Steering = (props: React.HTMLAttributes<HTMLDivElement>): React.Rea
 
 export const Button = (props: React.ButtonHTMLAttributes<HTMLButtonElement>): React.ReactElement => {
   return (
-    <button className='bg-gray-500 hover:bg-gray-700 disabled:bg-gray-400 text-white p-2 rounded-full first:mr-4' {...props} />
+    <button className='bg-neutral-500 hover:bg-neutral-900 disabled:bg-neutral-300 text-white p-2 rounded-full first:mr-4' {...props} />
   )
 }
