@@ -35,19 +35,16 @@ export const Carousel = ({
   const [position, setPosition] = React.useState({ x: 0 })
   const [isLastItem, setIsLastItem] = React.useState(false)
   const [isFirstItem, setIsFirstItem] = React.useState(true)
-  const carouselViewRef = React.useRef<HTMLDivElement>(null)
+  const carouselContentRef = React.useRef<HTMLDivElement>(null)
   const scrollAmount = React.useRef(0)
   const init = React.useRef(false)
   const observer = React.useRef<IntersectionObserver | null>(null)
 
-  function initiliaze (): void {
+  function observeFirstAndLastSlide (): void {
     const options = {
-      root: carouselViewRef.current,
+      root: carouselContentRef.current,
       threshold: 0.9
     }
-    init.current = true
-    scrollAmount.current = carouselViewRef.current!.clientWidth * 0.8 // eslint-disable-line
-
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -62,23 +59,30 @@ export const Carousel = ({
       })
     }, options)
 
-    observer.current.observe(carouselViewRef.current!.children[0]) // eslint-disable-line
+    observer.current.observe(carouselContentRef.current!.children[0]) // eslint-disable-line
     observer.current.observe(
-      carouselViewRef.current!.children[ // eslint-disable-line
-        carouselViewRef.current!.children.length - 1 // eslint-disable-line
+      carouselContentRef.current!.children[ // eslint-disable-line
+        carouselContentRef.current!.children.length - 1 // eslint-disable-line
       ]
     )
   }
 
   React.useLayoutEffect(() => {
     if (!init.current) {
-      initiliaze()
+      init.current = true
+      scrollAmount.current = carouselContentRef.current!.clientWidth * 0.8 // eslint-disable-line
+      observeFirstAndLastSlide()
       return
     }
-    carouselViewRef.current!.scrollBy({ // eslint-disable-line
+    observeFirstAndLastSlide()
+    carouselContentRef.current!.scrollBy({ // eslint-disable-line
       behavior: 'smooth',
       left: position.x
     })
+
+    return () => {
+      observer.current!.disconnect() // eslint-disable-line
+    }
   }, [position])
 
   const shift = (e: React.MouseEvent<HTMLElement>): void => {
@@ -93,7 +97,7 @@ export const Carousel = ({
 
   return (
     <CarouselViewport width={width} height={height} gap={gap} {...rest} tabIndex={0}>
-      <div style={{ gap }} ref={carouselViewRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory w-fit children:flex-none children:snap-start'>{children}</div>
+      <div style={{ gap }} ref={carouselContentRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory w-fit children:flex-none children:snap-start'>{children}</div>
       <Steering>
         <Button
           onClick={shift}
