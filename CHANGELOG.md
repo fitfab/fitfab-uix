@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://github.com/fitfab/fitfab-uix/compare/v1.1.2...v1.1.3) (2022-05-22)
+
+
+### Bug Fixes
+
+* disconnect obeserver on unmount to prevent memory leak ([2cbbf58](https://github.com/fitfab/fitfab-uix/commit/2cbbf58f68f6248d9cd7298e576079b638704824))
+
 ### [1.1.2](https://github.com/fitfab/fitfab-uix/compare/v1.1.1...v1.1.2) (2022-05-20)
 
 
