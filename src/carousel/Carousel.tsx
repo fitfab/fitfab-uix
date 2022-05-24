@@ -108,21 +108,15 @@ export const Carousel = ({
           aria-label='previous'
           data-direction='prev'
           disabled={isFirstItem}
-        >
-          <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth={1}>
-            <path strokeLinecap='round' strokeLinejoin='round' d='M15 19l-7-7 7-7' />
-          </svg>
-        </Button>
+          direction='left'
+        />
         <Button
           onClick={shift}
           aria-label='next'
           data-direction='next'
           disabled={isLastItem}
-        >
-          <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor' strokeWidth={1}>
-            <path strokeLinecap='round' strokeLinejoin='round' d='M9 5l7 7-7 7' />
-          </svg>
-        </Button>
+          direction='right'
+        />
       </Steering>
     </CarouselViewport>
   )
