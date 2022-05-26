@@ -33,14 +33,13 @@ export const Carousel = ({
   ...rest
 }: CarouselProps): React.ReactElement => {
   const [position, setPosition] = React.useState({ x: 0 })
-  const [isLastItem, setIsLastItem] = React.useState(false)
-  const [isFirstItem, setIsFirstItem] = React.useState(true)
+  const [isBoundary, setIsBoundary] = React.useState(0)
   const carouselContentRef = React.useRef<HTMLDivElement>(null)
   const scrollAmount = React.useRef(0)
   const init = React.useRef(false)
   const observer = React.useRef<IntersectionObserver | null>(null)
 
-  function observeFirstAndLastSlide (): void {
+  function observeBoundary (): void {
     const options = {
       root: carouselContentRef.current,
       threshold: 0.9
@@ -48,13 +47,9 @@ export const Carousel = ({
     observer.current = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.getAttribute('data-slide') === '0'
-            ? setIsFirstItem(true)
-            : setIsLastItem(true)
+          setIsBoundary(Number(entry.target.getAttribute('data-slide')))
         } else {
-          entry.target.getAttribute('data-slide') === '0'
-            ? setIsFirstItem(false)
-            : setIsLastItem(false)
+          setIsBoundary(-1)
         }
       })
     }, options)
@@ -67,18 +62,18 @@ export const Carousel = ({
     )
   }
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (!init.current) {
-      init.current = true
       scrollAmount.current = carouselContentRef.current!.clientWidth * 0.8 // eslint-disable-line
       const items = [...carouselContentRef.current!.children] // eslint-disable-line
       items.forEach((item, index) => {
         item.setAttribute('data-slide', index.toString())
       })
-      observeFirstAndLastSlide()
+      init.current = true
       return
     }
-    observeFirstAndLastSlide()
+
+    observeBoundary()
     carouselContentRef.current!.scrollBy({ // eslint-disable-line
       behavior: 'smooth',
       left: position.x
@@ -107,14 +102,14 @@ export const Carousel = ({
           onClick={shift}
           aria-label='previous'
           data-direction='prev'
-          disabled={isFirstItem}
+          disabled={isBoundary === 0}
           direction='left'
         />
         <Button
           onClick={shift}
           aria-label='next'
           data-direction='next'
-          disabled={isLastItem}
+          disabled={isBoundary > 0}
           direction='right'
         />
       </Steering>
