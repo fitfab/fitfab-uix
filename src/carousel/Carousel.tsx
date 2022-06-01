@@ -95,8 +95,8 @@ export const Carousel = ({
   }
 
   return (
-    <CarouselViewport width={width} height={height} gap={gap} {...rest} tabIndex={0}>
-      <div style={{ gap }} ref={carouselContentRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory w-fit children:flex-none children:snap-start'>{children}</div>
+    <CarouselViewport width={width} height={height} gap={gap} {...rest}>
+      <div tabIndex={0} style={{ gap }} ref={carouselContentRef} className='flex overflow-scroll scroll-smooth snap-x snap-mandatory w-fit children:flex-none children:snap-start'>{children}</div>
       <Steering>
         <Button
           onClick={shift}
