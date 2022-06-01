@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://github.com/fitfab/fitfab-uix/compare/v1.2.0...v1.2.1) (2022-06-01)
+
+
+### Bug Fixes
+
+* add tabIndex={0} to the scrollable section of the carousel to comply with accessibility ([1e07268](https://github.com/fitfab/fitfab-uix/commit/1e07268cb4f7427ac537434c048afe5b458af126))
+
 ## [1.2.0](https://github.com/fitfab/fitfab-uix/compare/v1.1.3...v1.2.0) (2022-06-01)
 
 
