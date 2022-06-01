@@ -217,7 +217,7 @@ Reference: [A handy git hook helper.](https://typicode.github.io/husky/#/?id=man
   npx husky add .husky/pre-commit "npx lint-staged"
   ```
 
-### lint-staged setup
+### Lint-staged setup
   
   ```bash
   # 1. Install the npm package
@@ -234,4 +234,38 @@ Reference: [A handy git hook helper.](https://typicode.github.io/husky/#/?id=man
 ## Release-please setup
 
   Reference: [Release-please github action setup documentation](https://github.com/google-github-actions/release-please-action)
-  
+
+## Jest & Testing-library setup
+
+```bash
+
+yarn add -D jest @types/jest jest-environment-jsdom ts-jest @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event identity-obj-proxy
+```
+
+- Add a **jest.setup.ts** file [jest.setup.ts](./jest.setup.ts)
+
+  ```js
+  // jest-dom adds custom jest matchers for asserting on DOM nodes.
+  // allows you to do things like:
+  // expect(element).toHaveTextContent(/react/i)
+  // learn more: https://github.com/testing-library/jest-dom
+  import '@testing-library/jest-dom'
+  ```
+
+- Add a **jest.config.js** file [jest.config.js](./jest.config.js)
+
+  Make sure you point to the `jest.setup.ts` within `jest.config.js` file.
+
+  ```ts
+    // A list of paths to modules that run some code to configure or set up the testing framework before each test file in the suite is executed
+    // https://jestjs.io/docs/configuration#setupfilesafterenv-array
+    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  ```
+
+- Update the `tsconfig.json` file to include the following types & include:
+
+  ```json
+    //...
+    "types": ["vite/client", "@types/jest", "@testing-library/jest-dom"]
+    "include": ["src", "./jest.setup.ts"],
+  ```

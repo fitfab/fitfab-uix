@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <button
+    class="text-white tracking-wide uppercase px-4 truncate min-w-[5rem] max-w-xs h-10 rounded-full bg-black hover:bg-neutral-800"
+  >
+    Facebook
+  </button>
+</div>
+`;
