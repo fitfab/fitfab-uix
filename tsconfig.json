@@ -18,7 +18,7 @@
     "declaration": true,
     "types": ["vite/client", "@types/jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "./jest.setup.ts"],
-  "exclude": ["node_modules", "dist", "src/**/*.stories.tsx"],
+  "include": ["src",],
+  "exclude": ["node_modules", "dist", "src/**/*.stories.tsx", "src/**/*.test.tsx", "utils/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

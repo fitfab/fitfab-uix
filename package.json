@@ -29,6 +29,7 @@
   },
   "scripts": {
     "dev": "start-storybook -p 6006",
+    "prebuild": "rm -rf dist",
     "build": "yarn lint && tsc --noemit && vite build",
     "postbuild": "tsc --emitDeclarationOnly",
     "build:sb": "build-storybook",

@@ -262,10 +262,9 @@ yarn add -D jest @types/jest jest-environment-jsdom ts-jest @testing-library/jes
     setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   ```
 
-- Update the `tsconfig.json` file to include the following types & include:
+- Update the `tsconfig.json` file to include the following types:
 
   ```json
     //...
     "types": ["vite/client", "@types/jest", "@testing-library/jest-dom"]
-    "include": ["src", "./jest.setup.ts"],
   ```
