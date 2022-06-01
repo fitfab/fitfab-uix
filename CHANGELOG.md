@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/fitfab/fitfab-uix/compare/v1.1.3...v1.2.0) (2022-06-01)
+
+
+### Features
+
+* Setup Jest and Testing-library ([#12](https://github.com/fitfab/fitfab-uix/issues/12)) ([c5f0814](https://github.com/fitfab/fitfab-uix/commit/c5f0814517fc5bd013e9d1d14c834d310c8919d7))
+
 ### [1.1.3](https://github.com/fitfab/fitfab-uix/compare/v1.1.2...v1.1.3) (2022-05-22)
 
 
