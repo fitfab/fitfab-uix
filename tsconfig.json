@@ -16,9 +16,9 @@
     "jsx": "react-jsx",
     "declarationDir": "./dist",
     "declaration": true,
-    "types": ["vite/client"]
+    "types": ["vite/client", "@types/jest", "@testing-library/jest-dom"]
   },
-  "include": ["src"],
+  "include": ["src", "./jest.setup.ts"],
   "exclude": ["node_modules", "dist", "src/**/*.stories.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
