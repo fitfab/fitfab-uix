@@ -53,34 +53,37 @@ export const Carousel = ({
         }
       })
     }, options)
-
-    observer.current.observe(carouselContentRef.current!.children[0]) // eslint-disable-line
+    // observe the first child
+    observer.current.observe(carouselContentRef.current?.children[0] as Element)
+    // observe the last child
     observer.current.observe(
-      carouselContentRef.current!.children[ // eslint-disable-line
-        carouselContentRef.current!.children.length - 1 // eslint-disable-line
-      ]
+      carouselContentRef.current?.children[
+        carouselContentRef.current?.children.length - 1
+      ] as Element
     )
   }
 
   React.useEffect(() => {
     if (!init.current) {
-      scrollAmount.current = carouselContentRef.current!.clientWidth * 0.8 // eslint-disable-line
-      const items = [...carouselContentRef.current!.children] // eslint-disable-line
+      scrollAmount.current = carouselContentRef.current?.clientWidth as number * 0.8
+      const items = [].slice.call(carouselContentRef.current?.children) as Element[]
       items.forEach((item, index) => {
         item.setAttribute('data-slide', index.toString())
       })
+      observeBoundary()
       init.current = true
       return
     }
 
     observeBoundary()
-    carouselContentRef.current!.scrollBy({ // eslint-disable-line
+
+    carouselContentRef.current?.scrollBy({
       behavior: 'smooth',
       left: position.x
     })
 
     return () => {
-      observer.current!.disconnect() // eslint-disable-line
+      observer.current?.disconnect()
     }
   }, [position])
 
