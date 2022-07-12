@@ -81,7 +81,6 @@ export const Author = ({ uid, ...props }: AuthorProps): JSX.Element => {
       })
       .catch(error => {
         console.log('error: ', error)
-        // console.error(error)
       })
   }, [uid])
   console.log('author: ', content)
