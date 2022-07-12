@@ -1,0 +1,17 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+
+import { Author } from "./Author";
+
+<Meta title="Author" component={Author} />
+
+# Author
+
+The Author as max width of 320px and
+
+<Canvas>
+  <Story name="Author" args={{ uid: "1"}}>
+    {(args) => <Author {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Author" />
