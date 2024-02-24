@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/fitfab/fitfab-uix/compare/v1.2.1...v1.3.0) (2024-02-24)
+
+
+### Features
+
+* author component wip ([#15](https://github.com/fitfab/fitfab-uix/issues/15)) ([bd3d3dc](https://github.com/fitfab/fitfab-uix/commit/bd3d3dcd93260814d44d82ef1c8a32fbec9ed3c4))
+
 ### [1.2.1](https://github.com/fitfab/fitfab-uix/compare/v1.2.0...v1.2.1) (2022-06-01)
 
 
